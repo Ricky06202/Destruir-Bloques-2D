@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://do1ivlt0nb66j"]
+
+[ext_resource type="Script" path="res://Escenas/Barra/Barra.gd" id="1_nf2gw"]
+[ext_resource type="Texture2D" uid="uid://nlbwcjeiwokc" path="res://Recursos/Imagenes/Bloques/paddle/sp_paddle_strip2.png" id="2_0kbjt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfn02"]
+atlas = ExtResource("2_0kbjt")
+region = Rect2(0, 0, 34, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfjgf"]
+atlas = ExtResource("2_0kbjt")
+region = Rect2(34, 0, 34, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lvn6q"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Largo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfn02")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfjgf")
+}],
+"loop": true,
+"name": &"Normal",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f4uaw"]
+radius = 7.0
+height = 34.0
+
+[node name="Barra" type="CharacterBody2D"]
+script = ExtResource("1_nf2gw")
+SPEED = 300.0
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_lvn6q")
+animation = &"Normal"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_f4uaw")
+
+[node name="PosBola" type="Node2D" parent="."]
+position = Vector2(0, -17)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxdfrr4sbshxn"]
+
+[ext_resource type="TileSet" uid="uid://chnlb561tjd7m" path="res://Escenas/Generar Bloques/Generar Bloques.tres" id="1_bqy4b"]
+[ext_resource type="Script" path="res://Escenas/Generar Bloques/Generar Bloques.gd" id="1_dyd8k"]
+
+[node name="TileMap" type="TileMap"]
+texture_filter = 1
+tile_set = ExtResource("1_bqy4b")
+format = 2
+layer_0/name = "Color"
+script = ExtResource("1_dyd8k")
+tamano = Vector2i(19, 9)

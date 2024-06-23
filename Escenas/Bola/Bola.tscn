@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://c18j23b5m8dpf"]
+
+[ext_resource type="Texture2D" uid="uid://b1j6cawhr57b6" path="res://Recursos/Imagenes/ball.png" id="1_fw76x"]
+[ext_resource type="Script" path="res://Escenas/Bola/Bola.gd" id="1_q4kvh"]
+[ext_resource type="AudioStream" uid="uid://bxkjmpodh40bt" path="res://Recursos/Sonidos/Balloon Pop 1.wav" id="3_4g4tc"]
+[ext_resource type="AudioStream" uid="uid://27r0kqyrm6uq" path="res://Recursos/Sonidos/Boss hit 1.wav" id="4_uwd84"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_yackq"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wrl71"]
+radius = 3.0
+
+[node name="Bola" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 13
+mass = 0.01
+physics_material_override = SubResource("PhysicsMaterial_yackq")
+gravity_scale = 0.0
+freeze = true
+max_contacts_reported = 2
+contact_monitor = true
+linear_velocity = Vector2(1, -1)
+script = ExtResource("1_q4kvh")
+rapidez = 200
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_fw76x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wrl71")
+
+[node name="Rebotar" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_4g4tc")
+
+[node name="Morir" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_uwd84")
+
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

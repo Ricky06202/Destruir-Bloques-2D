@@ -1,0 +1,151 @@
+[gd_scene load_steps=21 format=3 uid="uid://cfljm5tkn17rr"]
+
+[ext_resource type="Script" path="res://Escenas/Bloque/Bloque.gd" id="1_s0t2x"]
+[ext_resource type="Texture2D" uid="uid://clps7n68au7q8" path="res://Recursos/Imagenes/Bloques/bricks/sp_brick_blue.png" id="2_b5fok"]
+[ext_resource type="Texture2D" uid="uid://ch13bg0520axi" path="res://Recursos/Imagenes/Bloques/bricks/sp_brick_white.png" id="3_5wyif"]
+[ext_resource type="Script" path="res://Componentes/Vida.gd" id="3_wpr5l"]
+[ext_resource type="Texture2D" uid="uid://b42xdqoyycf5p" path="res://Recursos/Imagenes/Bloques/bricks/sp_brick_purple.png" id="4_8w8ty"]
+[ext_resource type="Texture2D" uid="uid://baji8uhfxq1yi" path="res://Recursos/Imagenes/Bloques/bricks/sp_brick_orange.png" id="5_dn1ya"]
+[ext_resource type="Texture2D" uid="uid://cnw6vngw8bgww" path="res://Recursos/Imagenes/Bloques/bricks/sp_brick_black.png" id="6_1edjq"]
+[ext_resource type="Texture2D" uid="uid://c4sogbetp84du" path="res://Recursos/Imagenes/Bloques/bricks/sp_brick_gold_strip3.png" id="7_cdd3l"]
+[ext_resource type="Texture2D" uid="uid://g6o82yfc6sto" path="res://Recursos/Imagenes/Bloques/bricks/sp_brick_silver_strip2.png" id="8_v5vt4"]
+[ext_resource type="Texture2D" uid="uid://vdec2o0ghyco" path="res://Recursos/Imagenes/Bloques/bricks/sp_brick_red.png" id="9_olkww"]
+[ext_resource type="Texture2D" uid="uid://cykfhciyn11u6" path="res://Recursos/Imagenes/Bloques/bricks/sp_brick_pink.png" id="10_n8nlj"]
+[ext_resource type="Texture2D" uid="uid://crx8eo6kipwny" path="res://Recursos/Imagenes/Bloques/bricks/sp_brick_green.png" id="11_1obo2"]
+[ext_resource type="AudioStream" uid="uid://bxr5lmg0003y6" path="res://Recursos/Sonidos/Block Break 1.wav" id="13_jpn07"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7478o"]
+atlas = ExtResource("7_cdd3l")
+region = Rect2(0, 0, 19, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo3bt"]
+atlas = ExtResource("7_cdd3l")
+region = Rect2(19, 0, 19, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv0le"]
+atlas = ExtResource("7_cdd3l")
+region = Rect2(38, 0, 19, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lqpu5"]
+atlas = ExtResource("8_v5vt4")
+region = Rect2(0, 0, 19, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wg2je"]
+atlas = ExtResource("8_v5vt4")
+region = Rect2(19, 0, 19, 9)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ismx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b5fok")
+}],
+"loop": true,
+"name": &"Azul",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_5wyif")
+}],
+"loop": true,
+"name": &"Blanco",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_8w8ty")
+}],
+"loop": true,
+"name": &"Morado",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_dn1ya")
+}],
+"loop": true,
+"name": &"Naranja",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_1edjq")
+}],
+"loop": true,
+"name": &"Negro",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7478o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qo3bt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv0le")
+}],
+"loop": true,
+"name": &"Oro",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lqpu5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wg2je")
+}],
+"loop": true,
+"name": &"Plata",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_olkww")
+}],
+"loop": true,
+"name": &"Rojo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_n8nlj")
+}],
+"loop": true,
+"name": &"Rosa",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_1obo2")
+}],
+"loop": true,
+"name": &"Verde",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jb0xt"]
+size = Vector2(19, 9)
+
+[node name="Bloque" type="StaticBody2D" groups=["Bloques"]]
+collision_mask = 6
+script = ExtResource("1_s0t2x")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_7ismx")
+animation = &"Naranja"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_jb0xt")
+
+[node name="Vida" type="Node2D" parent="."]
+script = ExtResource("3_wpr5l")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_jpn07")
+
+[connection signal="morir" from="Vida" to="." method="_al_morir"]
+[connection signal="recibir_dano" from="Vida" to="." method="_al_recibir_dano"]

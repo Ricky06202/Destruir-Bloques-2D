@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ci1bsc43c14iv"]
+
+[ext_resource type="Script" path="res://Escenas/Niveles/Nivel.gd" id="1_jvd15"]
+[ext_resource type="PackedScene" uid="uid://ccnpygcup3i8l" path="res://Escenas/Interfaz/Interfaz.tscn" id="2_uofmt"]
+
+[node name="Pantalla Principal" type="Node"]
+script = ExtResource("1_jvd15")
+
+[node name="Interfaz" parent="." instance=ExtResource("2_uofmt")]
+
+[node name="Estatus" parent="Interfaz/Control" index="0"]
+visible = false
+
+[node name="Selector de nivel" parent="Interfaz/Control" index="5"]
+visible = true
+
+[node name="Lista Niveles" parent="Interfaz/Control/Selector de nivel" index="2"]
+offset_top = 43.0
+
+[editable path="Interfaz"]

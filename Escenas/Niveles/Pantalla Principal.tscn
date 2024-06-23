@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://byd760m3ghk2m"]
+
+[ext_resource type="Script" path="res://Escenas/Niveles/Nivel.gd" id="1_077or"]
+[ext_resource type="PackedScene" uid="uid://ccnpygcup3i8l" path="res://Escenas/Interfaz/Interfaz.tscn" id="2_3y10r"]
+
+[node name="Pantalla Principal" type="Node"]
+script = ExtResource("1_077or")
+
+[node name="Interfaz" parent="." instance=ExtResource("2_3y10r")]
+
+[node name="Estatus" parent="Interfaz/Control" index="0"]
+visible = false
+
+[node name="Menu Principal" parent="Interfaz/Control" index="4"]
+visible = true
+
+[editable path="Interfaz"]

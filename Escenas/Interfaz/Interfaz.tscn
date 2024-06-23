@@ -1,0 +1,572 @@
+[gd_scene load_steps=20 format=3 uid="uid://ccnpygcup3i8l"]
+
+[ext_resource type="FontFile" uid="uid://by7iva7jyag43" path="res://Recursos/Tipografias/ThaleahFat.ttf" id="1_7hn8g"]
+[ext_resource type="Script" path="res://Escenas/Interfaz/Interfaz.gd" id="1_m4b28"]
+[ext_resource type="Texture2D" uid="uid://uc2auhdctbu5" path="res://Recursos/Imagenes/Bloques/UI/sp_hud_long.png" id="3_otogc"]
+[ext_resource type="Texture2D" uid="uid://brxdchc44ts82" path="res://Recursos/Imagenes/Bloques/UI/sp_heart.png" id="4_bkq5g"]
+[ext_resource type="Texture2D" uid="uid://bqffnymg68b4n" path="res://Recursos/Imagenes/Interfaz/Menu Buttons/Clear Menu Buttons/Buttons-=.png" id="5_1og3y"]
+[ext_resource type="Texture2D" uid="uid://biai0l4s137ch" path="res://Recursos/Imagenes/Interfaz/Menu Buttons/Icons/House.png" id="5_skn5p"]
+[ext_resource type="Texture2D" uid="uid://bxbqn25ikxq3v" path="res://Recursos/Imagenes/Interfaz/Menu Buttons/Icons/Arrow3.png" id="6_buxbx"]
+[ext_resource type="Texture2D" uid="uid://dkj15qigv0xj5" path="res://Recursos/Imagenes/Interfaz/Menu Buttons/Clear Menu Buttons/Pressed/Buttons-pressed-=.png" id="6_k52b3"]
+[ext_resource type="Texture2D" uid="uid://hxxwsuuhgpgg" path="res://Recursos/Imagenes/Interfaz/Menu Buttons/Icons/Return.png" id="7_0vcdi"]
+[ext_resource type="Texture2D" uid="uid://cbhl16mkyqa4q" path="res://Recursos/Imagenes/Interfaz/Menu Buttons/Clear Menu Buttons/Grass-Buttons-arrow3.png" id="7_di3mo"]
+[ext_resource type="Texture2D" uid="uid://eovd0rs4eicq" path="res://Recursos/Imagenes/Interfaz/Menu Buttons/Clear Menu Buttons/Pressed/Buttons-pressed-arrow3.png" id="8_1pndt"]
+[ext_resource type="Texture2D" uid="uid://cg15im6dit18w" path="res://Recursos/Imagenes/Interfaz/Menu Buttons/Icons/Arrow.png" id="8_boox5"]
+[ext_resource type="Texture2D" uid="uid://d2xx1r4vwhj1u" path="res://Recursos/Imagenes/Interfaz/Menu Buttons/Clear Menu Buttons/Grass-Buttons-arrow2.png" id="9_4k5dc"]
+[ext_resource type="Texture2D" uid="uid://bari1whgqyygq" path="res://Recursos/Imagenes/Interfaz/Backgound/Pantalla Inicial.jpeg" id="9_t1bwo"]
+[ext_resource type="Texture2D" uid="uid://bipt1ue7suebs" path="res://Recursos/Imagenes/Interfaz/Menu Buttons/Clear Menu Buttons/Pressed/Buttons-pressed-arrow2.png" id="10_lb0ch"]
+[ext_resource type="Texture2D" uid="uid://bl1rcbr2pvtpf" path="res://Recursos/Imagenes/Interfaz/Backgound/Background_Yellow.png" id="10_y2ej1"]
+[ext_resource type="Texture2D" uid="uid://cr4n7neyuuje0" path="res://Recursos/Imagenes/Interfaz/Menu Buttons/Icons/Control.png" id="11_1hj64"]
+[ext_resource type="Texture2D" uid="uid://hnuoxqhvr2ao" path="res://Recursos/Imagenes/Interfaz/Menu Buttons/Clear Menu Buttons/Buttons-Control.png" id="11_jyo7i"]
+
+[sub_resource type="Theme" id="Theme_esxsb"]
+default_font = ExtResource("1_7hn8g")
+default_font_size = 16
+Button/colors/font_color = Color(0.875, 0.875, 0.875, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+
+[node name="Interfaz" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_m4b28")
+escena_principal = "res://Escenas/Niveles/Pantalla Principal.tscn"
+escena_seleccion_niveles = "res://Escenas/Niveles/Selector de Niveles.tscn"
+escenas_niveles = "res://Escenas/Niveles"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = SubResource("Theme_esxsb")
+
+[node name="Estatus" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Fondo3" type="Sprite2D" parent="Control/Estatus"]
+texture_filter = 1
+position = Vector2(0, 179)
+texture = ExtResource("3_otogc")
+centered = false
+
+[node name="Fondo4" type="Sprite2D" parent="Control/Estatus"]
+texture_filter = 1
+position = Vector2(382, 179)
+scale = Vector2(-1, 1)
+texture = ExtResource("3_otogc")
+centered = false
+
+[node name="Fondo2" type="Sprite2D" parent="Control/Estatus"]
+texture_filter = 1
+position = Vector2(94, 179)
+texture = ExtResource("3_otogc")
+centered = false
+
+[node name="Margen" type="MarginContainer" parent="Control/Estatus"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 107
+theme_override_constants/margin_bottom = 10
+
+[node name="Divisor" type="SplitContainer" parent="Control/Estatus/Margen"]
+layout_mode = 2
+split_offset = 50
+
+[node name="Puntuacion" type="Label" parent="Control/Estatus/Margen/Divisor"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+text = "Puntuacion: 0
+"
+
+[node name="Vidas" type="HBoxContainer" parent="Control/Estatus/Margen/Divisor"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Vida" type="TextureRect" parent="Control/Estatus/Margen/Divisor/Vidas"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_bkq5g")
+expand_mode = 3
+
+[node name="Vida2" type="TextureRect" parent="Control/Estatus/Margen/Divisor/Vidas"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_bkq5g")
+expand_mode = 3
+
+[node name="Vida3" type="TextureRect" parent="Control/Estatus/Margen/Divisor/Vidas"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("4_bkq5g")
+expand_mode = 3
+
+[node name="Menu" type="TextureButton" parent="Control/Estatus"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 10.0
+offset_right = 11.0
+offset_bottom = 10.0
+scale = Vector2(0.421687, 0.421687)
+texture_normal = ExtResource("5_1og3y")
+texture_pressed = ExtResource("6_k52b3")
+
+[node name="Izquierda" type="TouchScreenButton" parent="Control/Estatus"]
+position = Vector2(30, 134)
+scale = Vector2(0.421687, 0.421687)
+texture_normal = ExtResource("7_di3mo")
+texture_pressed = ExtResource("8_1pndt")
+action = "Mover_Izquierda"
+visibility_mode = 1
+
+[node name="Derecha" type="TouchScreenButton" parent="Control/Estatus"]
+position = Vector2(80, 134)
+scale = Vector2(0.421687, 0.421687)
+texture_normal = ExtResource("9_4k5dc")
+texture_pressed = ExtResource("10_lb0ch")
+action = "Mover_Derecha"
+visibility_mode = 1
+
+[node name="Disparar" type="TouchScreenButton" parent="Control/Estatus"]
+position = Vector2(309, 134)
+scale = Vector2(0.421687, 0.421687)
+texture_normal = ExtResource("11_jyo7i")
+texture_pressed = ExtResource("6_k52b3")
+action = "Disparar"
+visibility_mode = 1
+
+[node name="Ganar" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control/Ganar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/Ganar/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Ganar/Panel/CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Ganar/Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Has Ganado"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Ganar/Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Inicio" type="Button" parent="Control/Ganar/Panel/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Inicio"
+icon = ExtResource("5_skn5p")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Siguiente" type="Button" parent="Control/Ganar/Panel/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Siguiente"
+icon = ExtResource("6_buxbx")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Perder" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control/Perder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/Perder/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Perder/Panel/CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Perder/Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Has Perdido"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Perder/Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Inicio" type="Button" parent="Control/Perder/Panel/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Inicio"
+icon = ExtResource("5_skn5p")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Reintentar" type="Button" parent="Control/Perder/Panel/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Reintentar"
+icon = ExtResource("7_0vcdi")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Menu" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control/Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/Menu/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Menu/Panel/CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Menu/Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Pausa"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Menu/Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Reintentar" type="Button" parent="Control/Menu/Panel/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Reintentar"
+icon = ExtResource("7_0vcdi")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Continuar" type="Button" parent="Control/Menu/Panel/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Continuar"
+icon = ExtResource("8_boox5")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Inicio" type="Button" parent="Control/Menu/Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Inicio"
+icon = ExtResource("5_skn5p")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Menu Principal" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Menu Principal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_t1bwo")
+expand_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/Menu Principal"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Menu Principal/CenterContainer"]
+layout_mode = 2
+theme_override_constants/separation = 125
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/Menu Principal/CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 32
+text = "Destruir los Bloques"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Menu Principal/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/Menu Principal/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Menu Principal/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Jugar" type="Button" parent="Control/Menu Principal/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Jugar"
+
+[node name="Salir" type="Button" parent="Control/Menu Principal/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Salir"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Menu Principal/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Menu Principal"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -19.0
+offset_right = -2.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_constants/line_spacing = 0
+theme_override_font_sizes/font_size = 8
+text = "junio 2024
+ricardo sanjur"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Selector de nivel" type="Control" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/Selector de nivel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("10_y2ej1")
+expand_mode = 2
+
+[node name="Dificultad" type="Panel" parent="Control/Selector de nivel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -89.0
+offset_top = 12.0
+offset_right = 89.0
+offset_bottom = 34.0
+grow_horizontal = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/Selector de nivel/Dificultad"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Selector de nivel/Dificultad/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/Selector de nivel/Dificultad/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "Dificultad"
+vertical_alignment = 1
+
+[node name="Dificultad" type="HSlider" parent="Control/Selector de nivel/Dificultad/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 10.0
+
+[node name="Lista Niveles" type="CenterContainer" parent="Control/Selector de nivel"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 18.0
+offset_bottom = -66.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Niveles" type="GridContainer" parent="Control/Selector de nivel/Lista Niveles"]
+layout_mode = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 3
+
+[node name="Nivel 1" type="Button" parent="Control/Selector de nivel/Lista Niveles/Niveles"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Nivel 1"
+icon = ExtResource("11_1hj64")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Nivel 2" type="Button" parent="Control/Selector de nivel/Lista Niveles/Niveles"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Nivel 2"
+icon = ExtResource("11_1hj64")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Nivel 3" type="Button" parent="Control/Selector de nivel/Lista Niveles/Niveles"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Nivel 3"
+icon = ExtResource("11_1hj64")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Nivel 4" type="Button" parent="Control/Selector de nivel/Lista Niveles/Niveles"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Nivel 4"
+icon = ExtResource("11_1hj64")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Nivel 5" type="Button" parent="Control/Selector de nivel/Lista Niveles/Niveles"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Nivel 5"
+icon = ExtResource("11_1hj64")
+icon_alignment = 1
+vertical_icon_alignment = 0
+expand_icon = true
+
+[connection signal="ganar" from="." to="." method="_on_ganar"]
+[connection signal="pausar" from="." to="." method="_on_pausar"]
+[connection signal="perder" from="." to="." method="_on_perder"]
+[connection signal="pressed" from="Control/Estatus/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Control/Ganar/Panel/CenterContainer/VBoxContainer/HBoxContainer/Inicio" to="." method="_on_inicio_pressed"]
+[connection signal="pressed" from="Control/Ganar/Panel/CenterContainer/VBoxContainer/HBoxContainer/Siguiente" to="." method="_on_siguiente_pressed"]
+[connection signal="pressed" from="Control/Perder/Panel/CenterContainer/VBoxContainer/HBoxContainer/Inicio" to="." method="_on_inicio_pressed"]
+[connection signal="pressed" from="Control/Perder/Panel/CenterContainer/VBoxContainer/HBoxContainer/Reintentar" to="." method="_on_reintentar_pressed"]
+[connection signal="pressed" from="Control/Menu/Panel/CenterContainer/VBoxContainer/HBoxContainer/Reintentar" to="." method="_on_reintentar_pressed"]
+[connection signal="pressed" from="Control/Menu/Panel/CenterContainer/VBoxContainer/HBoxContainer/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Control/Menu/Panel/CenterContainer/VBoxContainer/Inicio" to="." method="_on_inicio_pressed"]
+[connection signal="pressed" from="Control/Menu Principal/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="Control/Menu Principal/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer/Salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="Control/Selector de nivel/Lista Niveles/Niveles/Nivel 1" to="." method="_on_nivel_1_pressed"]
+[connection signal="pressed" from="Control/Selector de nivel/Lista Niveles/Niveles/Nivel 2" to="." method="_on_nivel_2_pressed"]
+[connection signal="pressed" from="Control/Selector de nivel/Lista Niveles/Niveles/Nivel 3" to="." method="_on_nivel_3_pressed"]
+[connection signal="pressed" from="Control/Selector de nivel/Lista Niveles/Niveles/Nivel 4" to="." method="_on_nivel_4_pressed"]
+[connection signal="pressed" from="Control/Selector de nivel/Lista Niveles/Niveles/Nivel 5" to="." method="_on_nivel_5_pressed"]

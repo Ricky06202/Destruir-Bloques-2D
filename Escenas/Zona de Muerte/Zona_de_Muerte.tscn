@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://chdhcorhba3pt"]
+
+[ext_resource type="Script" path="res://Escenas/Zona de Muerte/Zona_de_Muerte.gd" id="1_168nm"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ecvls"]
+
+[node name="Zona de Muerte" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("1_168nm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("WorldBoundaryShape2D_ecvls")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://dult7nrysnjiv"]
+
+[ext_resource type="PackedScene" uid="uid://ccnpygcup3i8l" path="res://Escenas/Interfaz/Interfaz.tscn" id="1_da5m7"]
+[ext_resource type="Script" path="res://Escenas/Niveles/Nivel.gd" id="1_wpd3b"]
+[ext_resource type="Texture2D" uid="uid://djlmwn67bevkb" path="res://Recursos/Imagenes/Bloques/Misc/bg.png" id="2_q21sq"]
+[ext_resource type="PackedScene" uid="uid://do1ivlt0nb66j" path="res://Escenas/Barra/Barra.tscn" id="4_bmvs3"]
+[ext_resource type="PackedScene" uid="uid://chdhcorhba3pt" path="res://Escenas/Zona de Muerte/Zona_de_Muerte.tscn" id="5_auody"]
+[ext_resource type="PackedScene" uid="uid://dxdfrr4sbshxn" path="res://Escenas/Generar Bloques/Generar Bloques.tscn" id="6_8o08c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhg20"]
+size = Vector2(77, 993.343)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgx80"]
+size = Vector2(853.517, 38.5)
+
+[node name="Nivel" type="Node"]
+script = ExtResource("1_wpd3b")
+siguiente_nivel = "res://Escenas/Niveles/Nivel 2.tscn"
+
+[node name="Interfaz" parent="." instance=ExtResource("1_da5m7")]
+
+[node name="Fondo" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_q21sq")
+centered = false
+
+[node name="Paredes" type="StaticBody2D" parent="."]
+position = Vector2(113, 0)
+scale = Vector2(0.181389, 0.181389)
+
+[node name="Izq" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(38.5, 492.351)
+shape = SubResource("RectangleShape2D_qhg20")
+
+[node name="Der" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(827.822, 495.671)
+shape = SubResource("RectangleShape2D_qhg20")
+
+[node name="Arriba" type="CollisionShape2D" parent="Paredes"]
+position = Vector2(427.759, -19.3411)
+shape = SubResource("RectangleShape2D_hgx80")
+
+[node name="Barra" parent="." instance=ExtResource("4_bmvs3")]
+position = Vector2(189, 165)
+
+[node name="Zona de Muerte" parent="." instance=ExtResource("5_auody")]
+position = Vector2(193, 194)
+
+[node name="TileMap" parent="." instance=ExtResource("6_8o08c")]
+position = Vector2(127, 0)
+scale = Vector2(0.974756, 0.974756)
+layer_0/tile_data = PackedInt32Array(262146, 4, 0, 262148, 4, 0, 262147, 6, 0)
