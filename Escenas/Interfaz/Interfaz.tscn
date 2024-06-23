@@ -142,24 +142,24 @@ texture_normal = ExtResource("5_1og3y")
 texture_pressed = ExtResource("6_k52b3")
 
 [node name="Izquierda" type="TouchScreenButton" parent="Control/Estatus"]
-position = Vector2(30, 134)
-scale = Vector2(0.421687, 0.421687)
+position = Vector2(36, 111)
+scale = Vector2(0.698795, 0.698795)
 texture_normal = ExtResource("7_di3mo")
 texture_pressed = ExtResource("8_1pndt")
 action = "Mover_Izquierda"
 visibility_mode = 1
 
 [node name="Derecha" type="TouchScreenButton" parent="Control/Estatus"]
-position = Vector2(80, 134)
-scale = Vector2(0.421687, 0.421687)
+position = Vector2(285, 111)
+scale = Vector2(0.695122, 0.695122)
 texture_normal = ExtResource("9_4k5dc")
 texture_pressed = ExtResource("10_lb0ch")
 action = "Mover_Derecha"
 visibility_mode = 1
 
 [node name="Disparar" type="TouchScreenButton" parent="Control/Estatus"]
-position = Vector2(309, 134)
-scale = Vector2(0.421687, 0.421687)
+position = Vector2(290, 58)
+scale = Vector2(0.523809, 0.523809)
 texture_normal = ExtResource("11_jyo7i")
 texture_pressed = ExtResource("6_k52b3")
 action = "Disparar"
@@ -198,6 +198,12 @@ alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Has Ganado"
+horizontal_alignment = 1
+
+[node name="Puntuacion" type="Label" parent="Control/Ganar/Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Puntuacion: 0"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/Ganar/Panel/CenterContainer/VBoxContainer"]
@@ -256,6 +262,12 @@ alignment = 1
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "Has Perdido"
+horizontal_alignment = 1
+
+[node name="Puntuacion" type="Label" parent="Control/Perder/Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Puntuacion: 0"
 horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Control/Perder/Panel/CenterContainer/VBoxContainer"]

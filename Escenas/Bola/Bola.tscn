@@ -23,7 +23,7 @@ max_contacts_reported = 2
 contact_monitor = true
 linear_velocity = Vector2(1, -1)
 script = ExtResource("1_q4kvh")
-rapidez = 200
+rapidez = 150
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

@@ -27,7 +27,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"Normal",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f4uaw"]
@@ -36,12 +36,13 @@ height = 34.0
 
 [node name="Barra" type="CharacterBody2D"]
 script = ExtResource("1_nf2gw")
-SPEED = 300.0
+SPEED = 150.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_lvn6q")
 animation = &"Normal"
+frame_progress = 0.540079
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)

@@ -28,6 +28,8 @@ func _ready():
 			add_child(nuevo_bloque)
 			nuevo_bloque.position = celda * tamano + tamano / 2
 
+	EstadoGlobal.bloquesRestantes = get_child_count()
+
 func acierta_la_probabilidad_del(probabilidad: int) -> bool:
 	probabilidad = clamp(probabilidad, 0, 100)
 	randomize()

@@ -8,6 +8,8 @@ var bola = preload("res://Escenas/Bola/Bola.tscn")
 var nuevaBola: Bola
 var tenemosVidas = true
 
+@onready var imagen : AnimatedSprite2D = get_node("Sprite2D")
+
 func _ready():
 	EstadoGlobal.perderVida.connect(instanciarNuevaBola)
 	instanciarNuevaBola()
@@ -19,8 +21,10 @@ func _physics_process(_delta):
 	var direction = Input.get_axis("Mover_Izquierda", "Mover_Derecha")
 	if direction:
 		velocity.x = direction * SPEED 
+		imagen.play()
 	else:
 		velocity.x = 0
+		imagen.pause()
 	
 	
 	move_and_slide()

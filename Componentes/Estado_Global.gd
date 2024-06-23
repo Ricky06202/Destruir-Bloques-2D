@@ -4,6 +4,8 @@ signal seObtubieronPuntos
 signal perderVida
 signal asignarDificultad
 
+var bloquesRestantes: int
+
 var siguiente_nivel
 
 enum COLORES{

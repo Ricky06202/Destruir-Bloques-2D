@@ -1,6 +1,11 @@
 extends CanvasLayer
 class_name Interfaz
 
+@onready var puntuacion_ganar : Label= get_node("Control/Ganar/Panel/CenterContainer/VBoxContainer/Puntuacion")
+@onready var puntuacion_perder : Label= get_node("Control/Perder/Panel/CenterContainer/VBoxContainer/Puntuacion")
+
+@onready var boton_siguiente : Button = get_node("Control/Ganar/Panel/CenterContainer/VBoxContainer/HBoxContainer/Siguiente")
+
 @onready var puntuacion : Label = get_node("Control/Estatus/Margen/Divisor/Puntuacion")
 @onready var vidas = get_node("Control/Estatus/Margen/Divisor/Vidas")
 @onready var dificultad : HSlider = get_node("Control/Selector de nivel/Dificultad/MarginContainer/HBoxContainer/Dificultad")
@@ -34,9 +39,9 @@ func _input(_event):
 		pausar.emit()
 
 func actualizarPuntuacion():
-	if get_tree().get_nodes_in_group("Bloques").size() <= 1:
-		ganar.emit()
 	puntuacion.text = "Puntuacion: " + str(EstadoGlobal.puntuacion)
+	if EstadoGlobal.bloquesRestantes == 0:
+		ganar.emit()
 
 func al_perderVida():
 	EstadoGlobal.vidas -= 1
@@ -49,11 +54,14 @@ var esta_jugando = true
 
 func _on_ganar():
 	get_tree().paused = true
+	boton_siguiente.visible = EstadoGlobal.siguiente_nivel != null
+	puntuacion_ganar.text = "Puntuacion: " + str(EstadoGlobal.puntuacion)
 	pantalla_ganar.visible = true
 	esta_jugando = false
 
 func _on_perder():
 	get_tree().paused = true
+	puntuacion_perder.text = "Puntuacion: " + str(EstadoGlobal.puntuacion)
 	pantalla_perder.visible = true
 	esta_jugando = false
 

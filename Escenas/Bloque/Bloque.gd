@@ -48,6 +48,7 @@ func _al_recibir_dano(): # esta funcion se ejecuta cada vez q el componente vida
 
 func _al_morir():
 	EstadoGlobal.puntuacion += puntosGanados * vida_inicial
+	EstadoGlobal.bloquesRestantes -= 1
 	EstadoGlobal.seObtubieronPuntos.emit()
 	#Todo Animacion de morir
 	imagen.visible = false
